@@ -1,14 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 const Post = require('./models/posts');
 
 const app = express();
 
-//MongoDB pw: x9C9xc22jlXG46UO
+const mongoDBpw = process.env.mongoDBpw;
 
-mongoose.connect('mongodb+srv://Jake:x9C9xc22jlXG46UO@cluster0.0cpxl.mongodb.net/Cluster0?retryWrites=true&w=majority')
+mongoose.connect(`mongodb+srv://Jake:${mongoDBpw}@cluster0.0cpxl.mongodb.net/Cluster0?retryWrites=true&w=majority`)
   .then(() => {
     console.log('Connected to database');
   })

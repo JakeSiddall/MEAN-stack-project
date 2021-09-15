@@ -21,7 +21,7 @@ mongoose.connect(`mongodb+srv://Jake:${mongoDBpw}@cluster0.0cpxl.mongodb.net/Clu
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/images", express.static(path.join("backend/images")));
+app.use("/images", express.static(path.join("images")));
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
